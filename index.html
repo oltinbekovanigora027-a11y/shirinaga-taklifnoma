@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shirinaga 💗</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+      font-family: Georgia, serif;
+      color: white;
+
+      background:
+        radial-gradient(circle at top, #6d2345, transparent 45%),
+        linear-gradient(135deg, #160914, #3b1028, #120810);
+    }
+
+    .card {
+      width: 90%;
+      max-width: 430px;
+      padding: 40px 27px;
+
+      text-align: center;
+
+      border: 1px solid rgba(255, 180, 205, 0.5);
+      border-radius: 30px;
+
+      background: rgba(255,255,255,0.09);
+      backdrop-filter: blur(15px);
+
+      box-shadow:
+        0 20px 70px rgba(0,0,0,0.55);
+
+      animation: appear 1.5s ease;
+    }
+
+    .heart {
+      font-size: 58px;
+      animation: heartbeat 1.4s infinite;
+    }
+
+    .small {
+      margin-top: 10px;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #f5b6ce;
+    }
+
+    h1 {
+      margin: 12px 0 5px;
+      font-size: 46px;
+      color: #ffd9e6;
+    }
+
+    .from {
+      color: #f5b6ce;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .text {
+      font-size: 19px;
+      line-height: 1.6;
+    }
+
+    .info {
+      margin: 25px 0;
+      padding: 18px;
+
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+
+      line-height: 2;
+      font-size: 17px;
+    }
+
+    .button {
+      border: none;
+      padding: 15px 30px;
+
+      border-radius: 50px;
+
+      font-size: 16px;
+      font-weight: bold;
+
+      color: #351022;
+      background: #f08bad;
+
+      cursor: pointer;
+
+      box-shadow: 0 8px 25px rgba(240,139,173,0.35);
+
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.08);
+    }
+
+    #answer {
+      margin-top: 20px;
+      min-height: 30px;
+
+      color: #ffd9e6;
+      font-size: 17px;
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -40px;
+
+      color: #ffabc8;
+      font-size: 22px;
+
+      pointer-events: none;
+
+      animation: floatUp 7s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes heartbeat {
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.7;
+      }
+
+      to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="heart">💗</div>
+
+    <div class="small">
+      Maxsus taklifnoma
+    </div>
+
+    <h1>Shirina</h1>
+
+    <div class="from">
+      Asadbekdan ❤️
+    </div>
+
+    <div class="text">
+      Shirina, seni birga kino ko‘rishga
+      taklif qilaman. ✨
+      <br><br>
+
+      Birga chiroyli vaqt
+      o‘tkazsak qanday bo‘ladi? 💕
+    </div>
+
+    <div class="info">
+      📅 <b>Shanba, 5-sentabr</b>
+      <br>
+
+      🕕 <b>18:00</b>
+      <br>
+
+      📍 <b>Family Park</b>
+    </div>
+
+    <button class="button" onclick="accept()">
+      💌 Ha, boraman!
+    </button>
+
+    <div id="answer"></div>
+
+  </div>
+
+
+  <script>
+
+    function accept() {
+
+      document.getElementById("answer").innerHTML =
+        "🥰 Zo‘r! Unda shanba kuni 18:00 da Family Parkda ko‘rishamiz! ❤️";
+
+    }
+
+
+    // Uchib yuradigan yurakchalar
+
+    for (let i = 0; i < 15; i++) {
+
+      const heart = document.createElement("div");
+
+      heart.className = "floating-heart";
+
+      heart.innerHTML =
+        Math.random() > 0.5 ? "❤" : "♡";
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+      heart.style.animationDelay =
+        Math.random() * 7 + "s";
+
+      heart.style.fontSize =
+        (15 + Math.random() * 20) + "px";
+
+      document.body.appendChild(heart);
+
+    }
+
+  </script>
+
+</body>
+</html>
